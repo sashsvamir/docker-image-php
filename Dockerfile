@@ -1,7 +1,7 @@
 # info:
 # gd   (to install png, jpeg see: https://github.com/docker-library/php/issues/225#issuecomment-226870896)
 
-FROM php:7.2-fpm-alpine
+FROM php:7.4-fpm-alpine
 
 
 
