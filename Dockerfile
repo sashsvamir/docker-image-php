@@ -1,7 +1,7 @@
 # info:
 # gd   (to install png, jpeg see: https://github.com/docker-library/php/issues/225#issuecomment-226870896)
 
-FROM php:7.4-fpm-alpine
+FROM php:8.1-fpm-alpine3.14
 
 
 
@@ -29,7 +29,7 @@ RUN apk add --no-cache libzip-dev icu-dev libpng-dev libjpeg-turbo-dev freetype-
 # RUN apk del --no-cache libpng-dev freetype-dev
 
 # install xdebug
-RUN pecl install xdebug-2.6.0 \
+RUN pecl install xdebug-3.1.3 \
  && docker-php-ext-enable xdebug
 
 # git
@@ -48,5 +48,4 @@ RUN rm -rf /var/cache/apk/*
 
 
 WORKDIR /var/www
-
 
