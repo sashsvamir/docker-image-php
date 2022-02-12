@@ -23,7 +23,7 @@ RUN apk add --no-cache --virtual .phpize-deps $PHPIZE_DEPS
 RUN apk add --no-cache libzip-dev icu-dev libpng-dev libjpeg-turbo-dev freetype-dev \
  && docker-php-ext-configure zip \
  && docker-php-ext-configure gd --with-freetype --with-jpeg \
- && docker-php-ext-install zip intl gd exif pdo_mysql mysqli
+ && docker-php-ext-install -j$(nproc) zip intl gd exif pdo_mysql mysqli
 
 # remove unused ext sources
 # RUN apk del --no-cache libpng-dev freetype-dev
